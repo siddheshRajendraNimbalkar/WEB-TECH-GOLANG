@@ -4,12 +4,15 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	types "github.com/siddheshRajendraNimbalkar/API-JWT-MYSQL/TYPES"
 )
 
-type Handler struct{}
+type Handler struct {
+	store types.UserStore
+}
 
-func NewHandler() *Handler {
-	return &Handler{}
+func NewHandler(store types.UserStore) *Handler {
+	return &Handler{store: store}
 }
 
 func (h *Handler) LoginRoutes(r *mux.Router) {

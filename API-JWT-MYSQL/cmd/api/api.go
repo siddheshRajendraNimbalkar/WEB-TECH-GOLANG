@@ -27,7 +27,8 @@ func (s *APIServer) Run() error {
 	subRouter := router.PathPrefix("v1/api").Subrouter()
 
 	// handling route
-	userHandler := user.NewHandler()
+	userStore := user.NewStore(s.db)
+	userHandler := user.NewHandler(userStore)
 	userHandler.LoginRoutes(subRouter)
 
 	log.Println("Server is Listing on Port: ", s.addr)

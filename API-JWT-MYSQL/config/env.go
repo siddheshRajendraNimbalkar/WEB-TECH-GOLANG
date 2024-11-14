@@ -21,10 +21,10 @@ func InitConfigFunc() Config {
 	return Config{
 		PublicHost: getEnvElement("PUBLIC_HOST", "http://localhost:"),
 		Port:       getEnvElement("PORT", ":8080"),
-		DBUser:     getEnvElement("DBName", "root"),
+		DBUser:     getEnvElement("DBUser", "root"),
 		DBName:     getEnvElement("DBName", "econ"),
 		Passwd:     getEnvElement("Passwd", "mypassword"),
-		DBAddress:  fmt.Sprintf("%s:%s", getEnvElement("DBHost", "127.0.0.1"), getEnvElement("DBPORT", "3306")),
+		DBAddress:  fmt.Sprintf("%s:%s", getEnvElement("DBHost", "127.0.0.1"), getEnvElement("DBPORT", "5433")),
 	}
 }
 
